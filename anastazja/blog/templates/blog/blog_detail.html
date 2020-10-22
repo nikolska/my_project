@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{article.title}}{% endblock %}
+
+{% block content %}
+<div class='blog-border'>
+	<div class='blog'>
+		<div class="blog-img"><img src="{{ article.image.url }}"></div>
+		<h1 class='blog-title'>{{article.title}}</h1>
+		<p class='blog-text'>{{article.text}}</p>
+		<em>{{article.pub_date}}</em>
+	</div>
+</div>
+{% if article.was_published_recently %}
+<div class="alert alert-danger" role="alert">
+  НОВАЯ СТАТЬЯ!
+</div>
+{% endif %}
+
+<div class='row'>
+	<button type="button" class="btn btn-outline-primary btn-lg" disabled>{{article.likes}}</button>
+	<form action='{% url "blog:add_like" article.id %}' method='POST'>
+	  {% csrf_token %}
+    <button type="submite" class="btn btn-outline-primary btn-lg">Like</button>
+	</form>
+	<br>
+	<button type="button" class="btn btn-outline-dark" disabled>{{article.dislikes}}</button>
+	<form action='{% url "blog:add_dislike" article.id %}' method='POST'>
+	  {% csrf_token %}
+	  <button type="submite" class="btn btn-outline-dark btn-lg">Dislike</button>
+	</form>
+</div>
+
+<hr>
+{% if latest_comments_list %}
+	{% for c in latest_comments_list %}
+		<p>
+			<strong>{{c.author_name}}</strong>
+			<p>{{c.comment_text}}</p>
+			<em>{{c.pub_date}}</em>
+		</p>
+	{% endfor %}
+{% else %}
+Комментарии не найдены! Станьте первым!
+{% endif %}
+<hr>
+
+<form action='{% url "blog:leave_comment" article.id %}' method='POST'>
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="formGroupExampleInput">Ваше имя</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" name='name'>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputComment">Текст комментария</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='text'></textarea><br>
+  <button type="submite" class="btn btn-outline-primary">Оставить комментарий</button>
+</form>
+
+
+{% endblock %}

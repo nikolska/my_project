@@ -1,0 +1,134 @@
+body {
+  background-image: linear-gradient(#B0E0E6,#FFFACD);
+}
+
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container, .container-sm, .container-md {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container, .container-sm, .container-md, .container-lg {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1140px;
+  }
+}
+
+.services {
+  margin: 10px;
+  padding: 25px;
+  box-shadow: 0px 0px 10px 2px #87CEFA;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF5EE;
+}
+.services_body {
+  padding: 10px;
+  font-size: 15px;
+  line-height: 1.5em;
+  display: flex;
+}
+.services_img {
+  padding: 10px;
+  align-self: center;
+  padding: 2px 10px;
+  display: flex;
+  float: left;
+  box-shadow: 0px 5px #87CEFA;
+}
+.services_img img {
+  max-width: 300px;
+  height: 300px;
+  border-radius: 100px;
+  box-shadow: 0px 0px 3px 3px #87CEFA;
+}
+.services_title {
+  font-family: monospace;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 5px 5px;
+} 
+.services_price {
+  font-family: monospace;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+}
+.services_text {
+  padding: 20px;
+  text-align: justify;
+}
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  margin: 30px;
+  background-color: #FFF5EE;
+}
+.blog-img {
+  align-self: center;
+  padding: 20px;
+}
+.blog-img img {
+  max-width: 500px;
+  height: 200px;
+  border-radius: 80px;
+}
+.blog-body {
+  padding: 30px;
+  font-size: 15px;
+  line-height: 1.5em;
+}
+.blog-title {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  text-align: center;
+  padding: 10px;
+}
+.blog-pub_date {
+  font-style: italic;
+  font-weight: 200;
+  text-align: center;
+  padding: 10px;
+}
+.blog-btn {
+  color: grey;
+  padding: 5px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px 2px #FFC0CB;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  cursor: pointer;
+  transition: 1.5s;
+}
+.blog-btn a {}
+.blog-text {
+  padding: 10px;
+  text-align: justify;
+}
+.blog-border {
+  border-width:5px;
+  border-style: dotted;
+  border-color: white;
+  margin: 10px;
+}
