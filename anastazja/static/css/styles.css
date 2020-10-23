@@ -33,7 +33,6 @@ body {
   box-shadow: 0px 0px 10px 2px #87CEFA;
   display: flex;
   flex-direction: column;
-  background-color: #FFF5EE;
 }
 .services_body {
   padding: 10px;
@@ -77,7 +76,6 @@ body {
   flex-direction: column;
   padding: 25px;
   margin: 30px;
-  background-color: #FFF5EE;
 }
 .blog-img {
   align-self: center;
