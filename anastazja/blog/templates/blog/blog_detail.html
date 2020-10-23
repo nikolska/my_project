@@ -14,7 +14,7 @@
 </div>
 {% if article.was_published_recently %}
 <div class="alert alert-danger" role="alert">
-  НОВАЯ СТАТЬЯ!
+  <h2>NEW ARTICLE!</h2>
 </div>
 {% endif %}
 
@@ -42,20 +42,20 @@
 		</p>
 	{% endfor %}
 {% else %}
-Комментарии не найдены! Станьте первым!
+	<h3>No comments found! Be the first!</h3>
 {% endif %}
 <hr>
 
 <form action='{% url "blog:leave_comment" article.id %}' method='POST'>
   {% csrf_token %}
   <div class="form-group">
-    <label for="formGroupExampleInput">Ваше имя</label>
+    <label for="formGroupExampleInput">Your name</label>
     <input type="text" class="form-control" id="formGroupExampleInput" name='name'>
   </div>
   <div class="form-group">
-    <label for="exampleInputComment">Текст комментария</label>
+    <label for="exampleInputComment">Your comment</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='text'></textarea><br>
-  <button type="submite" class="btn btn-outline-primary">Оставить комментарий</button>
+  <button type="submite" class="btn btn-outline-primary">Leave the comment</button>
 </form>
 
 

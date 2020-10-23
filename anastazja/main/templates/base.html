@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   
 	<!-- Добавление дополнительного статического CSS файла -->
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 	<title>{% block title %}{% endblock %}</title>
 
@@ -19,7 +19,24 @@
 <body>
 
 <div class="container">
-  {% block content %}{% endblock %}
+    <div class='d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-LightSkyBlue border-bottom shadow p-3 mb-4 rounded'>
+      <h5 class='my-0 mr-md-auto font-weight-normal'>
+        AnMa Prod. Company
+        <path fill-rule="evenodd" d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0-1a8 8 0 1 1 0 16A8 8 0 0 1 8 0z"/>
+        <path fill-rule="evenodd" d="M4.285 6.433a.5.5 0 0 0 .683-.183A3.498 3.498 0 0 1 8 4.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.498 4.498 0 0 0 8 3.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683z"/>
+        <path d="M7 9.5C7 8.672 6.552 8 6 8s-1 .672-1 1.5.448 1.5 1 1.5 1-.672 1-1.5zm4 0c0-.828-.448-1.5-1-1.5s-1 .672-1 1.5.448 1.5 1 1.5 1-.672 1-1.5z"/>
+      </svg>
+      </h5>
+      <nav class='my-2 my-md-0 mr-md-3'>
+        <a class='p-2 text-dark' href="/">Home</a>
+        <a class='p-2 text-dark' href="/info">About us</a>
+        <a class='p-2 text-dark' href="/services">Products</a>
+        <a class='p-2 text-dark' href="/blog">Blog</a>
+        <a class='p-2 text-dark' href="/gallery">Gallery</a>
+        <a class='p-2 text-dark' href="/contacts">Contacts</a>
+      </nav>
+    </div>
+    {% block content %}{% endblock %}
 </div>
 
 	<!-- Optional JavaScript -->

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Услуги
+{% endblock %}
+
+{% block content %}
+
+<div class="services">
+  {% if product_list %}
+  {% for product in product_list %}
+  <h3 class="services_title">{{ product.title }}</h3>
+  <h5 class="services_price">Price: {{ product.price }}$</h5>
+  <div class="services_body">  
+    <div class="services_img">
+      <img src='{{ product.image.url }}'>
+      <p class="services_text">{{ product.description }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+    <h2 align='center'>No services!</h2>
+  {% endif %}
+</div>
+
+
+{% endblock %}

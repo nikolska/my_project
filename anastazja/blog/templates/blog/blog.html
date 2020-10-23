@@ -2,13 +2,14 @@
 {% load static %}
 
 {% block title %}
-Блог
+Blog
 {% endblock %}
 
 {% block content %}
 
-{% if latest_articles_list %}
+
 <div class="blog"><br>
+  {% if latest_articles_list %}
   {% for a in latest_articles_list %}
   <div class="blog-img">
     <img src="{{ a.image.url }}">
@@ -20,10 +21,11 @@
   </div> 
   <br>
   {% endfor %}
+  {% else %}
+    <h2 align="center">No articles!</h2>
+  {% endif %}
 </div>
-{% else %}
-  Статьи не найдены!
-{% endif %}
+
 
 
   

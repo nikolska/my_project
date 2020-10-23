@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Contacts
+{% endblock %}
+
+{% block content %}
+
+  <div class='contacts-main'><h2>Contact Information</h2></div>
+
+  <div class='contacts'>
+    <div class='contacts-body'>
+      <div class='contacts-header'><h4>Our phone numbers:</h4></div>
+      <div class='contacts-info'>
+          {% if tel %}
+            {% for a in tel %}
+              <p>{{a.phone}}<br></p>
+            {% endfor %}
+          {% else %}
+            No information
+          {% endif %}
+      </div>
+    </div>
+    <div class='contacts-body'>
+      <div class='contacts-header'><h4>Our email:</h4></div>
+      <div class='contacts-info'>
+          {% if email %}
+            {% for a in email %}
+              <p>{{a.mail}}<br></p>
+            {% endfor %}
+          {% else %}
+            No information
+          {% endif %}
+      </div>
+    </div>
+    <div class='contacts-body'>
+      <div class='contacts-header'><h4>Our address:</h4></div>
+      <div class='contacts-info'>
+          {% if adrs %}
+            {% for a in adrs %}
+              <p>{{a.address}}</p>
+            {% endfor %}
+          {% else %}
+            No information
+          {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="feedback">
+    <h4 class="feedback-header">Feedback window</h4>
+    <p class="feedback-body">If you have any questions please contact us by phone, e-mail or click "Contact us" below. We will answer you as soon as possible!</p>
+    <a href="#" class="feedback-btn">Contact us</a>
+  </div>
+
+{% endblock %}
