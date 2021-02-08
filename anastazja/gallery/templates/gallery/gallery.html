@@ -9,7 +9,8 @@ Gallery
 
 {% for category in categories %}
     <ul>
-        <h3>{{ category.category }}</h3>
+        <h3 align="center">&#9733; {{ category.category|upper }} &#9733;</h3>
+        <p align="center">
         {% if photos %}
             {% for photo in photos %}
                 {% if photo.category == category %}
@@ -20,6 +21,7 @@ Gallery
                 {% endif %}
             {% endfor %}
         {% endif %}
+        </p>
     </ul>
 {% endfor %}
 
