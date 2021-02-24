@@ -212,11 +212,11 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .gallery li {
     flex: 1;
+    display: flex;
+    justify-content: center;
 }
 .gallery-img-small {
   max-height: 300px;
@@ -248,7 +248,10 @@ body {
     border-radius: 20px;
 }
 .lightbox-close {
+    height: 40px;
+    width: 40px;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 5px;
+    top: 5px;
+    border-radius: 50px;
 }

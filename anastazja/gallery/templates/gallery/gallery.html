@@ -8,7 +8,7 @@ Gallery
 {% block content %}
 
 {% for category in categories %}
-    <h3 align="center">&#9733; {{ category.category|upper }} &#9733;</h3>
+    <h3 align="center">&#9733; {{ category.category|upper }} &#9733;</h3><br>
     <ul class="gallery">
         <p align="center">
         {% if photos %}
@@ -21,7 +21,7 @@ Gallery
             {% endfor %}
         {% endif %}
         </p>
-    </ul><br>
+    </ul><br><br>
 
     <div class="lightbox">
         <div class="lightbox-cnt">
