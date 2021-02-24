@@ -207,3 +207,48 @@ body {
   cursor: pointer;
   transition: 1.5s;
 }
+.gallery {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gallery li {
+    flex: 1;
+}
+.gallery-img-small {
+  max-height: 300px;
+  max-width: 300px;
+  border-radius: 20px;
+}
+.lightbox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.lightbox-cnt {
+    background: #fff;
+    padding: 5px;
+    position: relative;
+    border-radius: 20px;
+}
+.lightbox-img {
+    display: block;
+    max-height: 600px;
+    max-width: 600px;
+    border-radius: 20px;
+}
+.lightbox-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
