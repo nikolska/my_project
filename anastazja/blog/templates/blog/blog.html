@@ -15,7 +15,7 @@ Blog
     <img src="{{ a.image.url }}">
   </div>
   <div class="blog-body">
-    <h5 class="blog-title">{{ a.title }}</h5>
+    <h5 class="blog-title">"{{ a.title }}"</h5>
     <p class="blog-pub_date">{{ a.pub_date }}</p>
     <a href="{% url 'blog:detail' a.id %}" class="blog-btn">Read more</a>
   </div> 

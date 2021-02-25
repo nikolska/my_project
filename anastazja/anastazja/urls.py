@@ -18,12 +18,13 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 urlpatterns = [
 	path('', include('main.urls')),
-	path('blog/', include('blog.urls')),
-	path('gallery/', include('gallery.urls')),
-	path('contacts/', include('contacts.urls')),
-	path('info/', include('info.urls')),
-	path('services/', include('services.urls')),
-    path('admin/', admin.site.urls),
+	path('admin/', admin.site.urls),
+	path('blog/', include('blog.urls'), name='blog'),
+	path('contacts/', include('contacts.urls'), name='contacts'),
+	path('info/', include('info.urls'), name='info'),
+	path('gallery/', include('gallery.urls'), name='gallery'),
+	path('services/', include('services.urls'), name='services'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
