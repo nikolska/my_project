@@ -24,13 +24,9 @@ lightboxCtn.addEventListener('click', e => {
     e.stopPropagation();
 });
 
-const prevList = document.querySelectorAll("button.prev");
-const nextList = document.querySelectorAll("button.next");
-const prevArray = [...prevList];
-const nextArray = [...nextList];
 
-// const prev = document.querySelector("button.prev");
-// const next = document.querySelector("button.next");
+const prev = document.querySelector("button.prev");
+const next = document.querySelector("button.next");
 const carousel = document.querySelector(".carousel-container");
 const track = document.querySelector(".track");
 let width = carousel.offsetWidth;
@@ -40,44 +36,23 @@ window.addEventListener("resize", e => {
     width = carousel.offsetWidth;
 });
 
-for (let i=0; i<=prevArray.length; i++) {
-    nextArray[i].addEventListener("click", e => {
-        e.preventDefault();
-        index += 1;
-        prevArray[i].classList.add("show");
+next.addEventListener("click", e => {
+    e.preventDefault();
+    index += 1;
+    prev.classList.add("show");
 
-        track.style.transform = "translateX(" + index * -width + "px)";
-        if (track.offsetWidth - index * width < index * width) {
-            nextArray[i].classList.add("hide");
-        }
+    track.style.transform = "translateX(" + index * -width + "px)";
+    if (track.offsetWidth - index * width < index * width) {
+        next.classList.add("hide");
+    }
+});
+
+prev.addEventListener("click", e => {
+    index -= 1;
+    next.classList.remove("hide");
+    if (index === 0) {
+        prev.classList.remove("show");
+    }
+    track.style.transform = "translateX(" + index * -width + "px)";
     });
 
-    prevArray[i].addEventListener("click", e => {
-        index -= 1;
-        nextArray[i].classList.remove("hide");
-        if (index === 0) {
-            prevArray[i].classList.remove("show");
-        }
-        track.style.transform = "translateX(" + index * -width + "px)";
-    });
-}
-
-// next.addEventListener("click", e => {
-//     e.preventDefault();
-//     index += 1;
-//     prev.classList.add("show");
-//
-//     track.style.transform = "translateX(" + index * -width + "px)";
-//     if (track.offsetWidth - index * width < index * width) {
-//         next.classList.add("hide");
-//     }
-// });
-//
-// prev.addEventListener("click", e => {
-//     index -= 1;
-//     next.classList.remove("hide");
-//     if (index === 0) {
-//         prev.classList.remove("show");
-//     }
-//     track.style.transform = "translateX(" + index * -width + "px)";
-// });

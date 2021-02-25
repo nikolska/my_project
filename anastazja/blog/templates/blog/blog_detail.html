@@ -45,7 +45,9 @@
 		<h3>No comments found! Be the first!</h3>
 	{% endif %}
 	<hr>
-
+	{% if message %}
+		<h3 style="color: red" align="center">{{ message }}</h3>
+	{% endif %}
 	<form action='{% url "blog:leave_comment" article.id %}' method='POST'>
 	  {% csrf_token %}
 	  <div class="form-group">
