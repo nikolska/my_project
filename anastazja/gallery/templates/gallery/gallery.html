@@ -7,33 +7,39 @@ Gallery
 
 {% block content %}
 
-<div class="carousel-container">
-    {% for category in categories %}
-    <h3 align="center">&#9733; {{ category.category|upper }} &#9733;</h3><br>
-    <div align="center"">
-        <button class="btn-slick prev">&#9668;</button>
-        <button class="btn-slick next">&#9658;</button>
-    </div>
-    <div class="center inner-carousel">
-        <ul class="gallery track">
-            {% if photos %}
-                {% for photo in photos %}
-                    {% if photo.category == category %}
-                        <li style="padding: 20px"><a class="images" href="{{ photo.image.url }}">
-                            <img class="gallery-img-small" src="{{ photo.image.url }}"></a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
+<!--{% for category in categories %}-->
+<!--    <h3 align="center"> {{ category.category|upper }}</h3>-->
+<!--    {% if photos %}-->
+<!--        {% for photo in photos %}-->
+<!--            {% if photo.category == category %}-->
+<!--            {% endif %}-->
+<!--        {% endfor %}-->
+<!--    {% endif %}-->
+<!--{% endfor %}-->
+
+<div>
+    <table class="gallery-table">
+        {% for photo in photos %}
+            {% if forloop.counter0|divisibleby:5 %}
+                <tr class="gallery-tr">
             {% endif %}
-        </ul><br>
-    </div>
+                <td class="gallery-td">
+                    <a class="images" href="{{ photo.image.url }}">
+                        <img class="gallery-img-small-2" src="{{ photo.image.url }}">
+                    </a>
+                </td>
+            {% if forloop.counter|divisibleby:5 %}
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tr>
+    </table>
     <div class="lightbox">
         <div class="lightbox-cnt">
             <img src="" class="lightbox-img">
             <button class="lightbox-close"><span>&#10006;</span></button>
         </div>
     </div>
-    {% endfor %}
 </div>
 
 {% endblock %}
