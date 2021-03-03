@@ -7,15 +7,11 @@ Gallery
 
 {% block content %}
 
-<!--{% for category in categories %}-->
-<!--    <h3 align="center"> {{ category.category|upper }}</h3>-->
-<!--    {% if photos %}-->
-<!--        {% for photo in photos %}-->
-<!--            {% if photo.category == category %}-->
-<!--            {% endif %}-->
-<!--        {% endfor %}-->
-<!--    {% endif %}-->
-<!--{% endfor %}-->
+<form class="sort_photos" method="GET"><h3>
+    {% for category in categories %}
+    <input type="submit" name="sorting" value="{{ category.category|upper }}">
+    {% endfor %}
+</h3></form>
 
 <div>
     <table class="gallery-table">

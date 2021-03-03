@@ -273,4 +273,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.sort_photos {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
