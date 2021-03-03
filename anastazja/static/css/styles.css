@@ -213,18 +213,21 @@ body {
 .gallery-td {
     padding: 5px;
 }
-.gallery-img-small-2 {
-    max-height: 210px;
-    max-width: 210px;
+.gallery-img-small {
+    max-height: 200px;
+    max-width: 200px;
     border-top-left-radius: 50% 50%;
     border-top-right-radius: 50% 50%;
     border-bottom-right-radius: 50% 50%;
     border-bottom-left-radius: 50% 50%;
 }
-.gallery-img-small {
-    max-height: 300px;
-    max-width: 300px;
-    border-radius: 20px;
+.photo-object {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
 }
 .lightbox {
     position: fixed;
