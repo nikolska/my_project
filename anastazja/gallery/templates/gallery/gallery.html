@@ -8,9 +8,9 @@ Gallery
 {% block content %}
 
 <form class="sort_photos" method="GET"><h3>
-    <input type="submit" name="sorting" value="ALL PHOTOS">
+    <input class="btn btn-outline-light" type="submit" name="sorting" value="ALL PHOTOS">
     {% for category in categories %}
-        <input type="submit" name="sorting" value="{{ category.category|upper }}">
+        <input class="btn btn-outline-light" type="submit" name="sorting" value="{{ category.category|upper }}">
     {% endfor %}
 </h3></form>
 
